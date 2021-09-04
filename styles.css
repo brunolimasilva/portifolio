@@ -1,0 +1,366 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #1E1E2A;
+}
+
+/* HEADER*/
+
+.header-container {
+  height: 80vh;
+  width: 100vw;
+  background-color: #60E1E0;
+  background-image: url('./assents/Bruno1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 0 112px;
+  position: relative;
+}
+
+h1 {
+  font-size: 50px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.social-media{
+  margin-top: 1rem;
+  display:flex;
+}
+
+.social-media a {
+  text-decoration: none;
+  color: #1E1E2A;
+  padding: 1rem 4rem;
+  border: 1px solid #1E1E2A;
+  min-width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s ease-in-out;
+}
+
+a:hover {
+  background-color: white;
+}
+
+/* menu-hamburguer*/
+
+.checkbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  transition: 400ms ease-in-out 0s;
+}
+
+.checkbox .trace {
+  width: 50px;
+  height: 2px;
+  background-color: #1E1E2A;
+  position: absolute;
+  border-radius: 4px;
+  transition: 0.5s ease-in-out;
+}
+
+.checkbox .trace:nth-child(1) {
+  top: 26px;
+  transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(2) {
+  top: 46px;
+  transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(3) {
+  top: 66px;
+  transform: rotate(0);
+}
+
+#toggle {
+  display: none;
+}
+
+/* menu*/
+
+.menu {
+  position: absolute;
+  top: 28px;
+  right: 30px;
+  background-color:  transparent;
+  height: 4px;
+  width: 10px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 0px #ffffff;
+  z-index: -1;
+  transition: 400ms ease-in-out 0s;
+}
+
+.menu-items {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: 400ms ease-in-out 0s;
+}
+
+.menu-items ul {
+  list-style-type: none;
+}
+
+.menu-items ul li a {
+  margin:  10px 0;
+  color: #1E1E2A;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 40px;
+}
+
+/* anumação do menu*/
+
+#toggle:checked + .checkbox .trace:nth-child(1)  {
+  transform: rotate(45deg);
+  top: 47px;
+}
+
+#toggle:checked + .checkbox .trace:nth-child(2){
+  transform: translate(-100px);
+  width: 30px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#toggle:checked + .checkbox .trace:nth-child(3){
+  transform: rotate(-445deg);
+  top: 48px;
+}
+
+#toggle:checked + .checkbox {
+  background-color: #ffffff;
+}
+
+#toggle:checked ~ .menu {
+  box-shadow: 0px 0px 0px 100vmax #ffffff;
+  z-index:  1;
+}
+
+#toggle:checked ~ .menu-items {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* cards*/
+
+.container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 3rem 0;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+}
+
+
+.card {
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  margin:  3rem 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url('./assents/Bruno1.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: grayscale(0.5);
+  color: #1E1E2A;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.card-text {
+  width: 40%;
+  letter-spacing: 1px;
+  color: rgb(109, 109, 109);
+}
+
+.card-wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.card-wrapper .conversor:nth-child(1){
+  background-image: url('/assents/conversor.jpg');
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 90%;
+  background-repeat: no-repeat;
+  filter: grayscale(0.5);
+  transition: 0.5s ease-in-out;
+  background-size: cover;
+  margin: 10px;
+}
+
+.card-wrapper .temperatura:nth-child(1){
+  background-image: url('./assents/foto-clima.jpg');
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 90%;
+  background-repeat: no-repeat;
+  filter: grayscale(0.5);
+  transition: 0.5s ease-in-out;
+  background-size: cover;
+  margin: 10px ;
+}
+
+.card-wrapper .netflix:nth-child(1){
+  background-image: url('./assents/netflix.JPG');
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 90%;
+  background-repeat: no-repeat;
+  filter: grayscale(0.5);
+  transition: 0.5s ease-in-out;
+  background-size: cover;
+  margin: 10px ;
+}
+
+.card-wrapper .cartao-postal:nth-child(1){
+  background-image: url('./assents/paisagem.JPG');
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 90%;
+  background-repeat: no-repeat;
+  filter: grayscale(0.5);
+  transition: 0.5s ease-in-out;
+  background-size: cover;
+  margin: 10px ;
+}
+
+.card-wrapper::before {
+  content: '';
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  display: block;
+  border:  1px solid #ffffff;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.card-wrapper h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.card-wrapper p {
+  font-size: 0;
+  visibility: visible;
+  opacity: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.5s ease-in-out;
+}
+
+.card:hover{
+  filter: unset;
+}
+
+.card:hover > .card-wrapper::before {
+  height: 200px;
+  width: 200px;
+  opacity: 1;
+}
+
+.card:hover > .card-wrapper p{
+  opacity: 1;
+  visibility: visible;
+  font-size: 14px;
+}
+
+/* footer*/
+
+.footer {
+  width: 100%;
+  height: 100px;
+  background-color: #60E1E0;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color:#1E1E2A
+}
+
+
+@media (min-width: 375px) {
+  
+}
