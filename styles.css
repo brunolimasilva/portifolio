@@ -236,7 +236,7 @@ a:hover {
 }
 
 .card-wrapper .conversor:nth-child(1){
-  background-image: url('/assents/conversor.jpg');
+  background-image: url('./assents/conversor.jpg');
   text-align: center;
   display: flex;
   flex-direction: column;
